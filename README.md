@@ -5,7 +5,7 @@ The process of grading & giving feedback to M1 projects could be easier. So, I w
 ## Alpha
 - [x] Ability to grade the first BE M1 project easier by clicking on the appropriate Rubric scores, and typing pertinent feedback.
 - [x] Ability to generate feedback comprised with Rubric benchmark + instructor's custom feedback, along with the student's name, average, and each category score.
-- [ ] Ability to copy generated feedback for pasting into a Slack DM.
+- [ ] Ability to copy generated feedback for manually pasting into a Slack DM.
 - [ ] Ability to generate clickable Rubric markup from JSON file, manually generated from existing Project spec in BE curriculum
 
 ## Beta
