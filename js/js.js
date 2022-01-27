@@ -107,6 +107,5 @@ $("button#copyBtn").on('click', function(e) {
 
   $("textarea#fb_finished").select();
   document.execCommand('copy');
-  alert("Copied!");
 
 })
