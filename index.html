@@ -10,16 +10,16 @@
     <title>Feedback Machine - alpha</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <h1>Feedback Machine
+        <h1><span class="text-muted">Feedback Machine</span>
           <br/>
           <small id="projectName" style="text-light">War or Peace</small>
         </h1>
       </div>
       <hr/>
       <div class="row">
-        <div class="col-6">
+        <div class="col-12">
           <table id="rowTable" class="table table-responsive table-striped table-hover">
             <thead>
               <tr>
@@ -60,7 +60,7 @@
                   </label>
                 </td>
                 <td>
-                  <input id="1_result" type="text"  class="form-control" />
+                  <input id="1_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
                 </td>
               </tr>
               <tr>
@@ -95,7 +95,7 @@
                   </label>
                 </td>
                 <td>
-                  <input id="2_result" type="text"  class="form-control" />
+                  <input id="2_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
                 </td>
               </tr>
               <tr>
@@ -133,7 +133,7 @@
                   </label>
                 </td>
                 <td>
-                  <input id="3_result" type="text"  class="form-control" />
+                  <input id="3_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
                 </td>
               </tr>
               <tr>
@@ -171,7 +171,7 @@
                   </label>
                 </td>
                 <td>
-                  <input id="4_result" type="text"  class="form-control" />
+                  <input id="4_result" type="number" min="0" max="4" step="0.5" class="form-control" />
                 </td>
               </tr>
             </tbody>
@@ -179,7 +179,7 @@
         </div>
       <!-- </div> -->
       <!-- <div class="row"> -->
-        <div class="col-6">
+        <div class="col-12">
           <table class="table">
             <thead>
               <tr>
@@ -235,7 +235,10 @@
           <br/>
           <button class="btn btn-primary btn-lg w-100" onClick="generateFeedback()">Generate</button>
           <br/>
-          <p>Feedback to Copy: </p>
+          <br/>
+          <br/>
+          <h3>Instructor Feedback <small>
+            <button id="copyBtn" class="btn btn-sm">Copy</button></small></h3>
           <textarea class="form-control" id="fb_finished"></textarea>
       </div>
     </div>

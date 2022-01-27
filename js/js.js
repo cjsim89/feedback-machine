@@ -57,7 +57,7 @@ function calculateAverage() {
     total += thisValue;
 
   }
-  return (total / 4);
+  return (total / 4).toFixed(2);
 }
 
 function didPass() {
@@ -77,16 +77,36 @@ function getCategories() {
 function generateFeedback() {
   var categories = getCategories();
   var genFeed = "";
-  var message = "Hi " + $("#studentName").val() + ", your " + $("#projectName").text() + " project is ";
+  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#projectName").text() + " project is ";
 
   var message2 = (didPass()) ? "a pass :tada: Congratulations!\n\n" : "not a pass. Here is some feedback for you...\n\n";
 
   genFeed += message + message2;
 
   for (var i = 0; i < resultBoxes.length; i++) {
+    var $inputResultBox = $("input#" + (i+1) + "_result");
+    var resultBoxActualVal = $inputResultBox[0].value;
+    var $inputResultBoxVal = 0;
+    if (parseInt(Number.isInteger($inputResultBox[0].value))) {
+      $inputResultBoxVal = parseInt($inputResultBox[0].value);
+    } else {
+      $inputResultBoxVal = parseInt($inputResultBox[0].value);
+    }
+    if (resultBoxActualVal !== "") {
+      genFeed += categories[i] + ": " + resultBoxActualVal + "\n ```" + $inputResultBox.parents().find("td[id=" + (i+1) + "_" + $inputResultBoxVal + "]").children().find("p")[0].innerHTML.trim() + "```\n";
+      genFeed += $("textarea#feedback_" + (i+1)).val() + "\n\n";
+    }
 
-    genFeed += categories[i] + ": " + $("input#" + (i+1) + "_result").val() + "\n" + $("input#" + (i+1) + "_result").parents().find("td[id=" + (i+1) + "_" + $("input#" + (i+1) + "_result").val() + "]").children().find("p")[0].innerHTML.trim() + "\n";
-    genFeed += $("textarea#feedback_" + (i+1)).val() + "\n\n";
   }
   $("textarea#fb_finished").text(genFeed);
+  $("textarea#fb_finished").height(document.getElementById("fb_finished").scrollHeight);
 }
+
+$("button#copyBtn").on('click', function(e) {
+  e.preventDefault();
+
+  $("textarea#fb_finished").select();
+  document.execCommand('copy');
+  alert("Copied!");
+
+})

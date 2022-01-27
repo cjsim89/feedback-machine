@@ -16,10 +16,14 @@ table#rowTable input[type='radio'] {
   display: none;
 }
 
-table#rowTable input[type='text'] {
-  padding-right: 0;
+table#rowTable input[type='number'] {
+   /* padding-right: 0; */
 }
 
 table#rowTable {
-  font-size: small;
+  font-size: smaller;
+}
+
+table#rowTable tr td:last-child {
+  width: 100px;
 }
