@@ -1,0 +1,25 @@
+table td:hover {
+  background-color: rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+table td label {
+  display: block;
+  text-align: center;
+}
+
+table#rowTable td p {
+  cursor: pointer;
+}
+
+table#rowTable input[type='radio'] {
+  display: none;
+}
+
+table#rowTable input[type='text'] {
+  padding-right: 0;
+}
+
+table#rowTable {
+  font-size: small;
+}
