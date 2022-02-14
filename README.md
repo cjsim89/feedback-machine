@@ -21,7 +21,15 @@ All features of Beta, including:
 - [ ] Ability to paste and clone a student repo from GH, load project repo to an in-browser editor, and run code including tests & harnesses
 
 # How to Run
-Open `index.html` in your browser.
+
 Click on the text of each rubric score to assign that score's feedback to the project. If you want to assign a half-value to a category, use the Up/Down arrows or type it in each box.
 Fill out any custom feedback per category, fill out the student's name, and click `Generate`.
 Your Instructor Feedback will be populated at the bottom of the page.
+
+## Remotely
+Available at https://cjsim89.github.io/feedback-machine/
+
+## Locally
+Clone, then open `index.html` in your browser.
+
+
