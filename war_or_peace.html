@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css/main.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback Machine - alpha</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1><span class="text-muted">Feedback Machine</span>
+          <br/>
+          <small id="projectName" style="text-light">War or Peace</small>
+        </h1>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-12">
+          <table id="rowTable" class="table table-responsive table-striped table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Exceptional</th>
+                <th>Meets Expectations</th>
+                <th>Below Expectations</th>
+                <th>Well Below Expectations</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Functionality</th>
+                <td id="1_4">
+                  <label for="selector_1_4">
+                    <input type="radio" id="selector_1_4" name="selector_1" data-value="1_4" />
+                    <p>Application is robust and can handle a variety of inputs including invalid inputs and completes iteration 4</p>
+                  </label>
+
+                </td>
+                <td id="1_3">
+                  <label for="selector_1_3">
+                    <input type="radio" id="selector_1_3" name="selector_1" data-value="1_3" />
+                    <p>Application adheres to the flow outlined in the specification and can handle a variety of valid inputs (not just what is outlined in spec). Iteration 3 is complete.	</p>
+                  </label>
+                </td>
+                <td id="1_2">
+                  <label for="selector_1_2">
+                    <input type="radio" id="selector_1_2" name="selector_1" data-value="1_2" />
+                    <p>Only up to Iteration 2 is complete or the application does not follow the flow outlined in the specification.	</p>
+                  </label>
+                </td>
+                <td id="1_1">
+                  <label for="selector_1_1">
+                    <input type="radio" id="selector_1_1" name="selector_1" data-value="1_1" />
+                    <p>Iteration 2 is not complete.</p>
+                  </label>
+                </td>
+                <td>
+                  <input id="1_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Ruby Mechanics</th>
+                <td id="2_4">
+                  <label for="selector_2_4">
+                    <input type="radio" id="selector_2_4" name="selector_2" data-value="2_4" />
+                    <p>Project includes appropriate uses of hashes and enumerables not covered in class
+                    </p>
+                  </label>
+                </td>
+                <td id="2_3">
+                  <label for="selector_2_3">
+                    <input type="radio" id="selector_2_3" name="selector_2" data-value="2_3" />
+                  <p>Appropriately uses Ruby’s built in datatypes and methods, flow control, and enumerables.	</p>
+                  </label>
+                </td>
+                <td id="2_2">
+                  <label for="selector_2_2">
+                    <input type="radio" id="selector_2_2" name="selector_2" data-value="2_2" />
+                    <p>
+                      Does not appropriately use one or two of the following: Ruby’s built in datatypes and methods, flow control, and enumerables
+                    </p>
+                  </label>
+                </td>
+                <td id="2_1">
+                  <label for="selector_2_1">
+                    <input type="radio" id="selector_2_1" name="selector_2" data-value="2_1" />
+                    <p>
+                      Does not appropriately use Ruby’s built in datatypes and methods, flow control, and enumerables, or does not build classes
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="2_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Ruby Conventions</th>
+                <td id="3_4">
+                  <label for="selector_3_4">
+                    <input type="radio" id="selector_3_4" name="selector_3" data-value="3_4" />
+                    <p>
+                      Classes, methods, and variables are well named so that they clearly communicate their purpose. Code is all properly indented and syntax is consistent.
+                    </p>
+                  </label>
+                </td>
+                <td id="3_3">
+                  <label for="selector_3_3">
+                    <input type="radio" id="selector_3_3" name="selector_3" data-value="3_3" />
+                    <p>
+                      Code is mostly properly indented, spaced, and lines are not excessively long. Class, method, variable, and file names follow convention
+                    </p>
+                  </label>
+                </td>
+                <td  id="3_2">
+                  <label for="selector_3_2">
+                    <input type="radio" id="selector_3_2" name="selector_3" data-value="3_2" />
+                    <p>
+                      Code demonstrates some proper indenting and spacing. Class, method, variable, and file names inconsistently follow convention
+                    </p>
+                  </label>
+                </td>
+                <td id="3_1">
+                  <label for="selector_3_1">
+                    <input type="radio" id="selector_3_1" name="selector_3" data-value="3_1" />
+                    <p>
+                      Code is not properly indented and spaced and lines are excessively long. Class, method, variable, and file names do not follow convention
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="3_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Testing</th>
+                <td id="4_4">
+                  <label for="selector_4_4">
+                    <input type="radio" id="selector_4_4" name="selector_4" data-value="4_4" />
+                    <p>
+                      All methods that do not require command line input/output are accurately tested. Best use assertions are made.
+                    </p>
+                  </label>
+                </td>
+                <td id="4_3">
+                  <label for="selector_4_3">
+                    <input type="radio" id="selector_4_3" name="selector_4" data-value="4_3" />
+                    <p>
+                      Each class has its own test file. Every method listed on the specification is tested. Most tests are written to accurately verify expected behavior.
+                    </p>
+                  </label>
+                </td>
+                <td id="4_2">
+                  <label for="selector_4_2">
+                    <input type="radio" id="selector_4_2" name="selector_4" data-value="4_2" />
+                    <p>
+                      Tests are written for most methods listed on the specification, but the tests may be in an incorrect location or the tests may not accurately verify the expected behavior
+                    </p>
+                  </label>
+                </td>
+                <td id="4_1">
+                  <label for="selector_4_1">
+                    <input type="radio" id="selector_4_1" name="selector_4" data-value="4_1" />
+                    <p>
+                      Fewer than 7 tests written (in addition to the card tests provided)
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="4_result" type="number" min="0" max="4" step="0.5" class="form-control" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Feedback</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-value="1">Functionality</th>
+                <td>
+                  <textarea class="form-control" name="feedback_1" id="feedback_1"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="2">Ruby Mechanics</th>
+                <td>
+                  <textarea class="form-control" name="feedback_2" id="feedback_2"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="3">Ruby Conventions</th>
+                <td>
+                  <textarea class="form-control" name="feedback_3" id="feedback_3"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="4">Testing</th>
+                <td>
+                  <textarea class="form-control" name="feedback_4" id="feedback_4"></textarea>
+                </td>
+              </tr>
+          </table>
+          <div class="row">
+            <div class="col-6">
+              <h2>Student Information</h2>
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="studentName" class="col-form-label">Student Name</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="studentName" class="form-control" aria-describedby="studentName">
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <h2>Results</h2>
+              <strong>Average:</strong> <span id="result_average"></span>
+              <br/>
+              <strong>Result:</strong> <span id="result"><em>Pending</em></span>
+            </div>
+          </div>
+          <br/>
+          <button class="btn btn-primary btn-lg w-100" onClick="generateFeedback()">Generate</button>
+          <br/>
+          <br/>
+          <br/>
+          <h3>Instructor Feedback <small>
+            <button id="copyBtn" class="btn btn-sm">Copy</button></small></h3>
+          <textarea class="form-control" id="fb_finished"></textarea>
+      </div>
+    </div>
+    <script src="./js/js.js"></script>
+
+  </body>
+</html>

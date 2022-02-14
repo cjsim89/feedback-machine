@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  var connect_four_data = {}
+  loadData();
+  console.log(connect_four_data)
   ellies = $("input[name^='selector']");
 
   ellies.on('click', function(e) {
@@ -93,11 +96,15 @@ function generateFeedback() {
       $inputResultBoxVal = parseInt($inputResultBox[0].value);
     }
     if (resultBoxActualVal !== "") {
-      genFeed += categories[i] + ": " + resultBoxActualVal + "\n ```" + $inputResultBox.parents().find("td[id=" + (i+1) + "_" + $inputResultBoxVal + "]").children().find("p")[0].innerHTML.trim() + "```\n";
+      genFeed += categories[i] + ": " + resultBoxActualVal + " / 4\n ```" + $inputResultBox.parents().find("td[id=" + (i+1) + "_" + $inputResultBoxVal + "]").children().find("p")[0].innerHTML.trim() + "```\n";
       genFeed += $("textarea#feedback_" + (i+1)).val() + "\n\n";
     }
 
   }
+  var num_commits = $("#num_commits").val()
+  var num_pr = $("#num_pr").val()
+  genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
+
   $("textarea#fb_finished").text(genFeed);
   $("textarea#fb_finished").height(document.getElementById("fb_finished").scrollHeight);
 }
@@ -109,3 +116,16 @@ $("button#copyBtn").on('click', function(e) {
   document.execCommand('copy');
 
 })
+
+function loadData() {
+
+  $.ajax({
+    url: "https://cjsim89.github.io/feedback-machine/data/connect_four.json",
+    success: function(response) {
+      connect_four_data = response
+    }, error: function(error) {
+      console.log(error)
+    }
+  })
+
+}
