@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css/main.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback Machine - alpha</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1><span class="text-muted">Feedback Machine</span>
+          <br/>
+          <small id="projectName" style="text-light">Black Thursday</small>
+        </h1>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-12">
+          <h2>Student Information</h2>
+          <div class="row">
+            <div class="col-4">
+              <div class="col-auto">
+                <label for="studentName" class="col-form-label">Student Name</label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="studentName" class="form-control" aria-describedby="studentName">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="col-auto">
+                <label for="num_commits" class="col-form-label"># Commits </label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="num_commits" class="form-control" aria-describedby="num_commits">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="col-auto">
+                <label for="num_pr" class="col-form-label"># Pull Requests </label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="num_pr" class="form-control" aria-describedby="num_pr">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <table id="rowTable" class="table table-responsive table-striped table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Exceptional</th>
+                <th>Meets Expectations</th>
+                <th>Below Expectations</th>
+                <th>Well Below Expectations</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Functionality</th>
+                <td id="1_4">
+                  <label for="selector_1_4">
+                    <input type="radio" id="selector_1_4" name="selector_1" data-value="1_4" />
+                    <p>All iterations complete.</p>
+                  </label>
+
+                </td>
+                <td id="1_3">
+                  <label for="selector_1_3">
+                    <input type="radio" id="selector_1_3" name="selector_1" data-value="1_3" />
+                    <p>Iterations 0 through 4 complete.</p>
+                  </label>
+                </td>
+                <td id="1_2">
+                  <label for="selector_1_2">
+                    <input type="radio" id="selector_1_2" name="selector_1" data-value="1_2" />
+                    <p>Iterations 0 through 3 complete.	</p>
+                  </label>
+                </td>
+                <td id="1_1">
+                  <label for="selector_1_1">
+                    <input type="radio" id="selector_1_1" name="selector_1" data-value="1_1" />
+                    <p>Iteration 3 not complete. </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="1_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Mechanics</th>
+                <td id="2_4">
+                  <label for="selector_2_4">
+                    <input type="radio" id="selector_2_4" name="selector_2" data-value="2_4" />
+                    <p>Incorporates significant improvements not covered in class in a way that is appropriate and not simply for the sake of adding new things.	 </p>
+                  </label>
+                </td>
+                <td id="2_3">
+                  <label for="selector_2_3">
+                    <input type="radio" id="selector_2_3" name="selector_2" data-value="2_3" />
+                  <p>75% of enumerables are best choice. Class methods are implemented correctly. Does not pass data using instance variables over return values.	</p>
+                  </label>
+                </td>
+                <td id="2_2">
+                  <label for="selector_2_2">
+                    <input type="radio" id="selector_2_2" name="selector_2" data-value="2_2" />
+                    <p>
+                      Half of enumerables are best choice. Class methods are defined but not implemented properly. Passes data using instance variables when return values would suffice.
+                    </p>
+                  </label>
+                </td>
+                <td id="2_1">
+                  <label for="selector_2_1">
+                    <input type="radio" id="selector_2_1" name="selector_2" data-value="2_1" />
+                    <p>
+                      Less than 25% of enumerables are the best choice. Class methods are not defined correctly. Frequently passes data using instance variables when return values would suffice.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="2_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Design</th>
+                <td id="3_4">
+                  <label for="selector_3_4">
+                    <input type="radio" id="selector_3_4" name="selector_3" data-value="3_4" />
+                    <p>
+                      Implements classes/modules not described in the spec that help ensure all classes are less than 100 lines of code, clearly have a single responsibility, and do not repeat any code. Implements at least 1 module and at least 1 superclass. Implements benchmarking for each SalesAnalyst method described in the spec.
+                    </p>
+                  </label>
+                </td>
+                <td id="3_3">
+                  <label for="selector_3_3">
+                    <input type="radio" id="selector_3_3" name="selector_3" data-value="3_3" />
+                    <p>Methods are less than 7 lines, have a single responsibility, and have names that clearly communicate that single responsibility. At least one module or superclass helps reuse code across the repository classes. </p>
+                  </label>
+                </td>
+                <td  id="3_2">
+                  <label for="selector_3_2">
+                    <input type="radio" id="selector_3_2" name="selector_3" data-value="3_2" />
+                    <p>More than 2 methods are longer than 7 lines, do not have a single responsibility, or are named in a way that makes it difficult to understand what the method does. No module or superclass is used to help reduce repeated code across repository classes.	                    </p>
+                  </label>
+                </td>
+                <td id="3_1">
+                  <label for="selector_3_1">
+                    <input type="radio" id="selector_3_1" name="selector_3" data-value="3_1" />
+                    <p>
+                      Methods are often longer than 7 lines, do not have single responsibilities, and the code is generally difficult to read.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="3_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Testing</th>
+                <td id="4_4">
+                  <label for="selector_4_4">
+                    <input type="radio" id="selector_4_4" name="selector_4" data-value="4_4" />
+                    <p>Mocks and stubs are used to ensure that classes can be tested without relying on functionality from other classes.</p>
+                  </label>
+                </td>
+                <td id="4_3">
+                  <label for="selector_4_3">
+                    <input type="radio" id="selector_4_3" name="selector_4" data-value="4_3" />
+                    <p>
+                      Every method is tested at both the unit and integration level. git history demonstrates students are writing tests before implementation code.
+                    </p>
+                  </label>
+                </td>
+                <td id="4_2">
+                  <label for="selector_4_2">
+                    <input type="radio" id="selector_4_2" name="selector_4" data-value="4_2" />
+                    <p>
+                      Every method is not tested. git history does not demonstrate students are writing tests before implementation code.
+                    </p>
+                  </label>
+                </td>
+                <td id="4_1">
+                  <label for="selector_4_1">
+                    <input type="radio" id="selector_4_1" name="selector_4" data-value="4_1" />
+                    <p>
+                      Less than half of the methods in any given class are untested or have tests that don’t verify expected behavior.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="4_result" type="number" min="0" max="4" step="0.5" class="form-control" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Feedback</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-value="1">Functionality</th>
+                <td>
+                  <textarea class="form-control" name="feedback_1" id="feedback_1"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="2">Mechanics</th>
+                <td>
+                  <textarea class="form-control" name="feedback_2" id="feedback_2"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="3">Design</th>
+                <td>
+                  <textarea class="form-control" name="feedback_3" id="feedback_3"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="4">Testing</th>
+                <td>
+                  <textarea class="form-control" name="feedback_4" id="feedback_4"></textarea>
+                </td>
+              </tr>
+          </table>
+
+
+        </div>
+      </div>
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3>Version Control</h3>
+              <p>An exceptional project will have: Students implement a code review process for their pull request in which each partner makes suggestions for improvements, and those improvements are then integrated into the PR before it is merged. Students integrated HoundCI into git workflow.</p>
+
+              <p>A successful and passing project must have: Students contributed roughly equally to the project in terms of number of commits and lines of code. Commits are made in small chunks of functionality. Students used pull requests as a collaboration tool by reviewing each other’s PRs, making comments, and never merging their own PRs.</p>
+
+              <p>A failing project will have few commits, will not use a PR workflow, students with non equal contributions to the codebase, large commits, poor PR messages.</p>
+
+            </div>
+            <hr/>
+            <div class="col-12">
+
+              <h2>Results</h2>
+              <strong>Average:</strong> <span id="result_average"></span>
+              <br/>
+              <strong>Result:</strong> <span id="result"><em>Pending</em></span>
+            </div>
+          </div>
+          <br/>
+          <button class="btn btn-primary btn-lg w-100" onClick="generateFeedback()">Generate</button>
+          <br/>
+          <br/>
+          <br/>
+          <h3>Instructor Feedback <small>
+            <button id="copyBtn" class="btn btn-sm">Copy</button></small></h3>
+          <textarea class="form-control" id="fb_finished"></textarea>
+      </div>
+    </div>
+    <script src="./js/js.js"></script>
+
+  </body>
+</html>
