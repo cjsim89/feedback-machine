@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css/main.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Night Writer | Feedback Machine - alpha</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1><span class="text-muted">Feedback Machine</span>
+          <br/>
+          <small id="projectName" style="text-light">Night Writer</small>
+        </h1>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-12">
+          <h2>Student Information</h2>
+          <div class="row">
+            <div class="col-4">
+              <div class="col-auto">
+                <label for="studentName" class="col-form-label">Student Name</label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="studentName" class="form-control" aria-describedby="studentName">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="col-auto">
+                <label for="num_commits" class="col-form-label"># Commits </label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="num_commits" class="form-control" aria-describedby="num_commits">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="col-auto">
+                <label for="num_pr" class="col-form-label"># Pull Requests </label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="num_pr" class="form-control" aria-describedby="num_pr">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <table id="rowTable" class="table table-responsive table-striped table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Exceptional</th>
+                <th>Meets Expectations</th>
+                <th>Below Expectations</th>
+                <th>Well Below Expectations</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Functionality</th>
+                <td id="1_4">
+                  <label for="selector_1_4">
+                    <input type="radio" id="selector_1_4" name="selector_1" data-value="1_4" />
+                    <p>2 extensions and command line interface successfully implemented (Iteration 3 complete).	</p>
+                  </label>
+
+                </td>
+                <td id="1_3">
+                  <label for="selector_1_3">
+                    <input type="radio" id="selector_1_3" name="selector_1" data-value="1_3" />
+                    <p>Iteration 3 complete. </p>
+                  </label>
+                </td>
+                <td id="1_2">
+                  <label for="selector_1_2">
+                    <input type="radio" id="selector_1_2" name="selector_1" data-value="1_2" />
+                    <p>Iteration 2 complete, but iteration 3 not complete.	</p>
+                  </label>
+                </td>
+                <td id="1_1">
+                  <label for="selector_1_1">
+                    <input type="radio" id="selector_1_1" name="selector_1" data-value="1_1" />
+                    <p>Iteration 2 not complete.</p>
+                  </label>
+                </td>
+                <td>
+                  <input id="1_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Object-Oriented Programming</th>
+                <td id="2_4">
+                  <label for="selector_2_4">
+                    <input type="radio" id="selector_2_4" name="selector_2" data-value="2_4" />
+                    <p>Students have implemented either inheritance or at least one module in a logical manner. Students can speak as to how/why inheritance and modules made sense for the given implementations, why they improve the organization of the code, and the distinction between the two.	 </p>
+                  </label>
+                </td>
+                <td id="2_3">
+                  <label for="selector_2_3">
+                    <input type="radio" id="selector_2_3" name="selector_2" data-value="2_3" />
+                  <p>Project is broken into logical components that are appropriately encapsulated. No classes are unreasonably small or large, or contain knowledge/information/behavior that they shouldn’t know about. Student can articulate the single responsibilities of the various components.	</p>
+                  </label>
+                </td>
+                <td id="2_2">
+                  <label for="selector_2_2">
+                    <input type="radio" id="selector_2_2" name="selector_2" data-value="2_2" />
+                    <p>
+                      Students can clearly identify the responsibility of each class that they created and the methods that they wrote. Students are able to describe why they have organized their code in the way they did. Project may have too many or too few classes, or include knowledge/information/behavior that isn’t necessary for a given class to know. Student cannot articulate single responsibilities, or code does not demonstrate adherence to the described single responsibilities.
+                    </p>
+                  </label>
+                </td>
+                <td id="2_1">
+                  <label for="selector_2_1">
+                    <input type="radio" id="selector_2_1" name="selector_2" data-value="2_1" />
+                    <p>
+                      Students have difficulty explaining the reason they have organized their code in the way that they did. They may have few files that seem to be doing the vast majority of the work in the project, and have not drawn clear lines between the responsibilities of different classes they have created.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="2_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Ruby Conventions and Mechanics</th>
+                <td id="3_4">
+                  <label for="selector_3_4">
+                    <input type="radio" id="selector_3_4" name="selector_3" data-value="3_4" />
+                    <p>
+                      Classes, methods, and variables are well named so that they clearly communicate their purpose. Code is all properly indented and syntax is consistent. No methods are longer than 10 lines long. Most enumerables/data structures chosen are the most efficient tool for a given job, and students can speak as to why those enumerables/data structures were chosen.
+                    </p>
+                  </label>
+                </td>
+                <td id="3_3">
+                  <label for="selector_3_3">
+                    <input type="radio" id="selector_3_3" name="selector_3" data-value="3_3" />
+                    <p>
+                      Code is mostly properly indented, spaced, and lines are not excessively long. Class, method, variable, and file names follow convention. Some enumerables/data structures chosen are the most efficient tool for a given job, and students can speak as to why those enumerables/data structures were chosen. At least one hash is implemented in a way that makes logical sense.
+                  	</p>
+                  </label>
+                </td>
+                <td  id="3_2">
+                  <label for="selector_3_2">
+                    <input type="radio" id="selector_3_2" name="selector_3" data-value="3_2" />
+                    <p>
+                      Code demonstrates some proper indenting and spacing. Class, method, variable, and file names inconsistently follow convention. Few enumerables/data structures chosen are the most efficient tool for a given job. Students may not be able to speak as to why those enumerables/data structures were chosen. No hashes are implemented, or are implemented in an inappropriate use case.
+                     </p>
+                  </label>
+                </td>
+                <td id="3_1">
+                  <label for="selector_3_1">
+                    <input type="radio" id="selector_3_1" name="selector_3" data-value="3_1" />
+                    <p>
+                      Code is not properly indented and spaced and lines are excessively long. Class, method, variable, and file names do not follow convention.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="3_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Test-Driven Development</th>
+                <td id="4_4">
+                  <label for="selector_4_4">
+                    <input type="radio" id="selector_4_4" name="selector_4" data-value="4_4" />
+                    <p>
+                      Mocks and/or stubs are used appropriately to ensure two or more of the following: testing is more robust (i.e., testing methods that might not otherwise be tested due to factors like randomness or user input), testing is more efficient, or that classes can be tested without relying on functionality from other classes. Students are able to speak as to how mocks and/or stubs are fulfilling the above conditions. Test coverage metrics show 100% coverage.
+                    </p>
+                  </label>
+                </td>
+                <td id="4_3">
+                  <label for="selector_4_3">
+                    <input type="radio" id="selector_4_3" name="selector_4" data-value="4_3" />
+                    <p>
+                      Every method is tested at both the unit and integration level, and completely verify expected behavior (i.e., if a single method does 3 things, all 3 things are explicitly tested). Obvious edge cases are addressed. git history demonstrates students are writing tests before implementation code. Test coverage metrics show coverage at 99% or greater.
+                    </p>
+                  </label>
+                </td>
+                <td id="4_2">
+                  <label for="selector_4_2">
+                    <input type="radio" id="selector_4_2" name="selector_4" data-value="4_2" />
+                    <p>
+                      Every method is not tested, expected behavior is partially tested, and/or no edge cases are addressed. git history does not demonstrate students are writing tests before implementation code.
+                    </p>
+                  </label>
+                </td>
+                <td id="4_1">
+                  <label for="selector_4_1">
+                    <input type="radio" id="selector_4_1" name="selector_4" data-value="4_1" />
+                    <p>
+                      Test coverage is below 90% and/or less than half of the methods in any given class are untested or have tests that don’t verify expected behavior.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="4_result" type="number" min="0" max="4" step="0.5" class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Version Control</th>
+                <td id="5_4">
+                  <label for="selector_5_4">
+                    <input type="radio" id="selector_5_4" name="selector_4" data-value="5_4" />
+                    <p>
+                      Minimum 40 commits and 4 pull requests. All pull requests include related and logical chunks of functionality, and are named and documented to clearly communicate the purpose of the pull request. No commits include multiple pieces of functionality.
+                    </p>
+                  </label>
+                </td>
+                <td id="5_3">
+                  <label for="selector_5_3">
+                    <input type="radio" id="selector_5_3" name="selector_4" data-value="5_3" />
+                    <p>
+                      Every method is tested at both the unit and integration level, and completely verify expected behavior (i.e., if a single method does 3 things, all 3 things are explicitly tested). Obvious edge cases are addressed. git history demonstrates students are writing tests before implementation code. Test coverage metrics show coverage at 99% or greater.
+                    </p>
+                  </label>
+                </td>
+                <td id="5_2">
+                  <label for="selector_5_2">
+                    <input type="radio" id="selector_5_2" name="selector_4" data-value="5_2" />
+                    <p>
+                      Every method is not tested, expected behavior is partially tested, and/or no edge cases are addressed. git history does not demonstrate students are writing tests before implementation code.
+                    </p>
+                  </label>
+                </td>
+                <td id="5_1">
+                  <label for="selector_5_1">
+                    <input type="radio" id="selector_5_1" name="selector_4" data-value="5_1" />
+                    <p>
+                      Test coverage is below 90% and/or less than half of the methods in any given class are untested or have tests that don’t verify expected behavior.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="5_result" type="number" min="0" max="4" step="0.5" class="form-control" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Feedback</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-value="1">Functionality</th>
+                <td>
+                  <textarea class="form-control" name="feedback_1" id="feedback_1"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="2">Object Oriented Programming</th>
+                <td>
+                  <textarea class="form-control" name="feedback_2" id="feedback_2"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="3">Ruby Conventions and Mechanics</th>
+                <td>
+                  <textarea class="form-control" name="feedback_3" id="feedback_3"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="4">Test-Driven Development</th>
+                <td>
+                  <textarea class="form-control" name="feedback_4" id="feedback_4"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="5">Version Control</th>
+                <td>
+                  <textarea class="form-control" name="feedback_5" id="feedback_5"></textarea>
+                </td>
+              </tr>
+          </table>
+
+
+        </div>
+      </div>
+      <div class="container">
+          <div class="row">
+
+            <!-- <hr/> -->
+            <div class="col-12">
+
+              <h2>Results</h2>
+              <strong>Average:</strong> <span id="result_average"></span>
+              <br/>
+              <strong>Result:</strong> <span id="result"><em>Pending</em></span>
+            </div>
+          </div>
+          <br/>
+          <button class="btn btn-primary btn-lg w-100" onClick="generateFeedback()">Generate</button>
+          <br/>
+          <br/>
+          <br/>
+          <h3>Instructor Feedback <small>
+            <button id="copyBtn" class="btn btn-sm">Copy</button></small></h3>
+          <textarea class="form-control" id="fb_finished"></textarea>
+      </div>
+    </div>
+    <script src="./js/js.js"></script>
+
+  </body>
+</html>

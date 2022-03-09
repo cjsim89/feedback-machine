@@ -60,7 +60,7 @@ function calculateAverage() {
     total += thisValue;
 
   }
-  return (total / 4).toFixed(2);
+  return (total / resultBoxes.length).toFixed(2);
 }
 
 function didPass() {
