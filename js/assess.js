@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  var connect_four_data = {}
+  var assessment_data = {}
   loadData();
-  console.log(connect_four_data)
+  console.log(assessment_data)
   ellies = $("input[name^='selector']");
 
   ellies.on('click', function(e) {
@@ -80,11 +80,12 @@ function getCategories() {
 function generateFeedback() {
   var categories = getCategories();
   var genFeed = "";
-  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#projectName").text() + " is ";
+  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#assessName").text() + " is ";
 
-  var message2 = (didPass()) ? "a pass :tada: Congratulations!\n\n" : "not a pass. Here is some feedback for you...\n\n";
+  var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n";
+  var scoreLabel = "Average Score: " + calculateAverage() + "\n\n"
 
-  genFeed += message + message2;
+  genFeed += message + message2 + scoreLabel;
 
   for (var i = 0; i < resultBoxes.length; i++) {
     var $inputResultBox = $("input#" + (i+1) + "_result");
@@ -120,9 +121,9 @@ $("button#copyBtn").on('click', function(e) {
 function loadData() {
 
   $.ajax({
-    url: "https://cjsim89.github.io/feedback-machine/data/connect_four.json",
+    url: "https://cjsim89.github.io/feedback-machine/data/assessment.json",
     success: function(response) {
-      connect_four_data = response
+      assessment_data = response
     }, error: function(error) {
       console.log(error)
     }
