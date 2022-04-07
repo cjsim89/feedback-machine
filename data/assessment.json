@@ -1,0 +1,20 @@
+{
+   "Functionality": {
+      "Exceptional": "Student completes iteration 4",
+      "Meets Expectations": "Student completes the first 3 tasks",
+      "Below Expectations": "Student completes the first 2 tasks",
+      "Well Below Expectations": "Student completes the first task"
+   },
+   "Object Oriented Programming": {
+      "Exceptional": "Student shows the ability to initialize objects and encapsulate both state and behavior in the correct classes. Student chooses the best enumerables for each task. Student shows comfort with multiple objects interacting with no prompting from instructors. Student does not replicate any functionality that was previously built. Variable and method naming is excellent.",
+      "Meets Expectations": "Student shows the ability to initialize objects and encapsulate both state and behavior in mostly the correct classes. Student mostly chooses the best enumerables for each task. Student shows comfort with multiple objects interacting with minimal prompting ie: student thoguht they were done, but were informed they were not. Variable and method naming is mostly good.",
+      "Below Expectations": "Student may struggle with object interaction and understanding which objects have access to certain methods. Student may struggle choosing enumerables or use enumerables incorrectly.",
+      "Well Below Expectations": "Student struggles significantly with object interactions. Student is not able to pass objects to other objects. Student is not able to iterate or build collections."
+   },
+   "Test Driven Development": {
+      "Exceptional": "Student always builds and runs accurate and robust tests prior to implementing functionality with no prompting from instructor. Student always lets errors guide implementation.",
+      "Meets Expectations": "Student mostly builds and runs tests prior to implementing functionality that accurately describe the behavior required in iteration 3. Student mostly shows comfort building their test suite and letting errors guide implementation.",
+      "Below Expectations": "Student can build and run tests prior to implementing functionality some of the time but may not accurately test what the interaction pattern is asking for. Student builds functionality before writing tests on multiple occasions.",
+      "Well Below Expectations": "Student is unable to build tests that verify behavior."
+   }
+}
