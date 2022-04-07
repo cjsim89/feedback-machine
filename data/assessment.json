@@ -1,9 +1,9 @@
 {
    "Functionality": {
-      "Exceptional": "Student completes iteration 4",
-      "Meets Expectations": "Student completes the first 3 tasks",
-      "Below Expectations": "Student completes the first 2 tasks",
-      "Well Below Expectations": "Student completes the first task"
+      "Exceptional": "Student completes all four tasks of Iteration 3.",
+      "Meets Expectations": "Student completes the first 3 tasks of Iteration 3.",
+      "Below Expectations": "Student completes the first 2 tasks of Iteration 3.",
+      "Well Below Expectations": "Student completes the first task of Iteration 3."
    },
    "Object Oriented Programming": {
       "Exceptional": "Student shows the ability to initialize objects and encapsulate both state and behavior in the correct classes. Student chooses the best enumerables for each task. Student shows comfort with multiple objects interacting with no prompting from instructors. Student does not replicate any functionality that was previously built. Variable and method naming is excellent.",
