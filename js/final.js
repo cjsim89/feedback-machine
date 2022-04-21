@@ -116,9 +116,11 @@ function generateFeedback() {
   // var num_commits = $("#num_commits").val()
   // var num_pr = $("#num_pr").val()
   // genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
-  reminder  = "As a reminder, the combined score from your Instructor Final "
-  reminder += "Paired Assessment and Final IC must be 5.0 or higher, and each "
-  reminder += "individual score must be 2.0 or higher for promotion to Mod 2. "
+
+  reminder  = "As a reminder, here are the promotion requirements to Mod 2:\n"
+  reminder += " * Instructor Paired Final score: 2.0 or higher \n"
+  reminder += " * Final IC score: 2.0 or higher \n"
+  reminder += " * Combined score: 5.0 or higher \n"
   reminder += "Good luck! \n";
   genFeed += reminder
 
