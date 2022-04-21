@@ -44,6 +44,12 @@ $(document).ready(function() {
       $("span#result").html("Does Not Pass");
     }
 
+    if (theAverage >= 2.0) {
+      $("span#minimum").html("True");
+    } else {
+      $("span#minimum").html("False");
+    }
+
   })
 
 
@@ -80,14 +86,17 @@ function getCategories() {
 function generateFeedback() {
   var categories = getCategories();
   var genFeed = "";
-  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#assessName").text() + " is ";
+  var message = "Hi " + $("#studentName").val().trim() + ", your score on the ";
+  var message2 = $("#assessName").text() + " is " + calculateAverage() + ". ";
+  var message3 = "Here is some feedback:\n\n";
 
   // var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n\n";
   // genFeed += message + message2;
+  // var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n";
+  // var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n";
+  // var scoreLabel = "Assessment Score: " + calculateAverage() + "\n\n"
 
-  var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n";
-  var scoreLabel = "Average Score: " + calculateAverage() + "\n\n"
-  genFeed += message + message2 + scoreLabel;
+  genFeed += message + message2 + message3;
 
   for (var i = 0; i < resultBoxes.length; i++) {
     var $inputResultBox = $("input#" + (i+1) + "_result");
@@ -108,9 +117,13 @@ function generateFeedback() {
   // var num_pr = $("#num_pr").val()
   // genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
 
-  // var num_commits = $("#num_commits").val()
-  // var num_pr = $("#num_pr").val()
-  // genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
+  reminder  = "As a reminder, here are the promotion requirements to Mod 2:\n"
+  reminder += " * Instructor Paired Final score: 2.0 or higher \n"
+  reminder += " * Final IC score: 2.0 or higher \n"
+  reminder += " * Combined score: 5.0 or higher \n"
+  reminder += "Good luck! \n";
+  genFeed += reminder
+
 
   $("textarea#fb_finished").text(genFeed);
   $("textarea#fb_finished").height(document.getElementById("fb_finished").scrollHeight);
@@ -127,7 +140,7 @@ $("button#copyBtn").on('click', function(e) {
 function loadData() {
 
   $.ajax({
-    url: "https://cjsim89.github.io/feedback-machine/data/assessment.json",
+    url: "data/assessment.json",
     success: function(response) {
       assessment_data = response
     }, error: function(error) {
