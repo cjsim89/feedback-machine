@@ -82,9 +82,11 @@ function generateFeedback() {
   var genFeed = "";
   var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#assessName").text() + " is ";
 
+  // var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n\n";
+  // genFeed += message + message2;
+
   var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n";
   var scoreLabel = "Average Score: " + calculateAverage() + "\n\n"
-
   genFeed += message + message2 + scoreLabel;
 
   for (var i = 0; i < resultBoxes.length; i++) {
@@ -102,6 +104,10 @@ function generateFeedback() {
     }
 
   }
+  // var num_commits = $("#num_commits").val()
+  // var num_pr = $("#num_pr").val()
+  // genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
+
   // var num_commits = $("#num_commits").val()
   // var num_pr = $("#num_pr").val()
   // genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
