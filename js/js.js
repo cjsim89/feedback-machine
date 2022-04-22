@@ -1,4 +1,10 @@
 $(document).ready(function() {
+
+  var studentNameBox = $("input#studentName")
+  studentNameBox.on("input", function(e) {
+    document.title = $(this).val() + " | Feedback Machine"
+  })
+
   var connect_four_data = {}
   loadData();
   console.log(connect_four_data)
