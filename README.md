@@ -12,6 +12,7 @@ The process of grading & giving feedback to M1 projects could be easier. So, I w
 ## Beta
 All features of alpha, including:
 - [ ] Ability to automatically generate a clickable Rubric from a JSON file
+- [ ] ...in Rails, lol
 
 ## Full Spec
 All features of Beta, including:
