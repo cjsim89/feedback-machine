@@ -88,9 +88,9 @@ function generateFeedback() {
   var genFeed = "";
   var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#projectName").text() + " project is ";
 
-  var message2 = (didPass()) ? "a pass :tada: Congratulations!\n\n" : "not a pass. Here is some feedback for you...\n\n";
-
-  genFeed += message + message2;
+  var message2 = (didPass()) ? "a pass :tada: Congratulations!\n\n" : "not a pass. Here is some feedback for you...\n";
+  var averageMessage = "Average: " + calculateAverage() + " / 4.0" + "\n\n";
+  genFeed += message + message2 + averageMessage;
 
   for (var i = 0; i < resultBoxes.length; i++) {
     var $inputResultBox = $("input#" + (i+1) + "_result");
