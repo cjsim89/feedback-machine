@@ -109,7 +109,9 @@ function generateFeedback() {
   }
   var num_commits = $("#num_commits").val()
   var num_pr = $("#num_pr").val()
-  genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
+  if (num_commits && num_pr) {
+    genFeed += "\n# Commits: " + num_commits + "\n# Pull requests: " + num_pr + "\n";
+  }
 
   $("textarea#fb_finished").text(genFeed);
   $("textarea#fb_finished").height(document.getElementById("fb_finished").scrollHeight);

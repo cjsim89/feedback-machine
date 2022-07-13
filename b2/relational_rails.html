@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../css/main.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relational Rails | Feedback Machine - alpha</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1><span class="text-muted">Feedback Machine</span>
+          <br/>
+          <small id="projectName" style="text-light">Relational Rails</small>
+        </h1>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-12">
+          <h2>Student Information</h2>
+          <div class="row">
+            <div class="col-4">
+              <div class="col-auto">
+                <label for="studentName" class="col-form-label">Student Name(s)</label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="studentName" class="form-control" aria-describedby="studentName">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <table id="rowTable" class="table table-responsive table-striped table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Exceptional</th>
+                <th>Passing</th>
+                <th>Passing with Concerns</th>
+                <th>Failing</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Feature Completeness</th>
+                <td id="1_4">
+                  <label for="selector_1_4">
+                    <input type="radio" id="selector_1_4" name="selector_1" data-value="1_4" />
+                    <p>All User Stories 100% complete including edge cases, and at least one extension story completed	</p>
+                  </label>
+
+                </td>
+                <td id="1_3">
+                  <label for="selector_1_3">
+                    <input type="radio" id="selector_1_3" name="selector_1" data-value="1_3" />
+                    <p>Students complete all User Stories. No more than 2 Stories fail to correctly implement functionality.	</p>
+                  </label>
+                </td>
+                <td id="1_2">
+                  <label for="selector_1_2">
+                    <input type="radio" id="selector_1_2" name="selector_1" data-value="1_2" />
+                    <p>Students fail to complete 3-5 User Stories.	</p>
+                  </label>
+                </td>
+                <td id="1_1">
+                  <label for="selector_1_1">
+                    <input type="radio" id="selector_1_1" name="selector_1" data-value="1_1" />
+                    <p>Students fail to complete 6 or more User Stories.	</p>
+                  </label>
+                </td>
+                <td>
+                  <input id="1_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Rails</th>
+                <td id="2_4">
+                  <label for="selector_2_4">
+                    <input type="radio" id="selector_2_4" name="selector_2" data-value="2_4" />
+                    <p>Students use the principles of MVC to effectively organize code.	
+                    </p>                 
+                  </label>
+                </td>
+                <td id="2_3">
+                  <label for="selector_2_3">
+                    <input type="radio" id="selector_2_3" name="selector_2" data-value="2_3" />
+                  <p>Students can defend any of their design decisions. Routing is organized and consistent and demonstrates use of some RESTful principles. Students can describe how data is passed in their application.	</p>
+                  </label>
+                </td>
+                <td id="2_2">
+                  <label for="selector_2_2">
+                    <input type="radio" id="selector_2_2" name="selector_2" data-value="2_2" />
+                    <p>
+                      Students cannot defend some of their design decisions. Students inaccurately describe how some of their data is passed through their application. Routes don’t demonstrate any use of RESTful design.	
+                    </p>
+                  </label>
+                </td>
+                <td id="2_1">
+                  <label for="selector_2_1">
+                    <input type="radio" id="selector_2_1" name="selector_2" data-value="2_1" />
+                    <p>
+                      Students do not effectively organize code.	
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="2_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Database Design</th>
+                <td id="3_4">
+                  <label for="selector_3_4">
+                    <input type="radio" id="selector_3_4" name="selector_3" data-value="3_4" />
+                    <p>
+                      Clear schema design with detailed and accurate diagram. Migration history reflects table alterations not taught in class. All data types in the schema make logical sense.	                    </p>
+                  </label>
+                </td>
+                <td id="3_3">
+                  <label for="selector_3_3">
+                    <input type="radio" id="selector_3_3" name="selector_3" data-value="3_3" />
+                    <p>
+                      Relationships modeled in the database correctly. Appropriate use of foreign keys. Schema design accurately represents actual database schema and design document is linked in the README	                  	</p>
+                  </label>
+                </td>
+                <td  id="3_2">
+                  <label for="selector_3_2">
+                    <input type="radio" id="selector_3_2" name="selector_3" data-value="3_2" />
+                    <p>
+                      Some errors in database schema. Schema diagram lacks detail or accurate representation in database.	                    </p>
+                     </p>
+                  </label>
+                </td>
+                <td id="3_1">
+                  <label for="selector_3_1">
+                    <input type="radio" id="selector_3_1" name="selector_3" data-value="3_1" />
+                    <p>
+                      Poor diagram design. Relationships do not make sense or not accurately modeled in the database. Many errors in database schema.	</p>
+                  </label>
+                </td>
+                <td>
+                  <input id="3_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">ActiveRecord</th>
+                <td id="4_4">
+                  <label for="selector_4_4">
+                    <input type="radio" id="selector_4_4" name="selector_4" data-value="4_4" />
+                    <p>
+                      Inheritance is utilized to DRY up duplicate queries.	
+                    </p>
+                  </label>
+                </td>
+                <td id="4_3">
+                  <label for="selector_4_3">
+                    <input type="radio" id="selector_4_3" name="selector_4" data-value="4_3" />
+                    <p>
+                      ActiveRecord helpers are utilized whenever possible. ActiveRecord is used in a clear and effective way to read/write data. No Ruby is used to process data. All queries functional and accurately implemented.	
+                    </p>
+                  </label>
+                </td>
+                <td id="4_2">
+                  <label for="selector_4_2">
+                    <input type="radio" id="selector_4_2" name="selector_4" data-value="4_2" />
+                    <p>
+                      Ruby is used to process data that could use ActiveRecord instead. Some instances where ActiveRecord helpers are not utilized. Some queries not accurately implemented.	
+                    </p>
+                  </label>
+                </td>
+                <td id="4_1">
+                  <label for="selector_4_1">
+                    <input type="radio" id="selector_4_1" name="selector_4" data-value="4_1" />
+                    <p>
+                      Ruby is used to process data more often than ActiveRecord. Many cases where ActiveRecord helpers are not utilized.	
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="4_result" type="number" min="0" max="4" step="0.5" class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Testing and Debugging</th>
+                <td id="5_4">
+                  <label for="selector_5_4">
+                    <input type="radio" id="selector_5_4" name="selector_4" data-value="5_4" />
+                    <p>
+                      Minimum 40 commits and 4 pull requests. All pull requests include related and logical chunks of functionality, and are named and documented to clearly communicate the purpose of the pull request. No commits include multiple pieces of functionality.
+                    </p>
+                  </label>
+                </td>
+                <td id="5_3">
+                  <label for="selector_5_3">
+                    <input type="radio" id="selector_5_3" name="selector_4" data-value="5_3" />
+                    <p>
+                      100% coverage for models. 98% coverage for features. Tests are well written and meaningful. Students can point to the difference between integration and unit testing.
+                    </p>
+                  </label>
+                </td>
+                <td id="5_2">
+                  <label for="selector_5_2">
+                    <input type="radio" id="selector_5_2" name="selector_4" data-value="5_2" />
+                    <p>
+                      Feature test coverage between 90% and 98%, or model test coverage below 100%, or tests are not meaningfully written or have an unclear objective.
+                    </p>
+                  </label>
+                </td>
+                <td id="5_1">
+                  <label for="selector_5_1">
+                    <input type="radio" id="selector_5_1" name="selector_4" data-value="5_1" />
+                    <p>
+                      Below 90% coverage for either features or models.
+                    </p>
+                  </label>
+                </td>
+                <td>
+                  <input id="5_result" type="number" min="0" max="4" step="0.5" class="form-control" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Feedback</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-value="1">Feature Completeness</th>
+                <td>
+                  <textarea class="form-control" name="feedback_1" id="feedback_1"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="2">Rails</th>
+                <td>
+                  <textarea class="form-control" name="feedback_2" id="feedback_2"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="3">Database Design</th>
+                <td>
+                  <textarea class="form-control" name="feedback_3" id="feedback_3"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="4">ActiveRecord</th>
+                <td>
+                  <textarea class="form-control" name="feedback_4" id="feedback_4"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" data-value="5">Testing and Debugging</th>
+                <td>
+                  <textarea class="form-control" name="feedback_5" id="feedback_5"></textarea>
+                </td>
+              </tr>
+          </table>
+
+
+        </div>
+      </div>
+      <div class="container">
+          <div class="row">
+
+            <!-- <hr/> -->
+            <div class="col-12">
+
+              <h2>Results</h2>
+              <strong>Average:</strong> <span id="result_average"></span>
+              <br/>
+              <strong>Result:</strong> <span id="result"><em>Pending</em></span>
+            </div>
+          </div>
+          <br/>
+          <button class="btn btn-primary btn-lg w-100" onClick="generateFeedback()">Generate</button>
+          <br/>
+          <br/>
+          <br/>
+          <h3>Instructor Feedback <small>
+            <button id="copyBtn" class="btn btn-sm">Copy</button></small></h3>
+          <textarea class="form-control" id="fb_finished"></textarea>
+      </div>
+    </div>
+    <script src="../js/js.js"></script>
+
+  </body>
+</html>
