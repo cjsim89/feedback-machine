@@ -2,55 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="./css/main.css" rel="stylesheet" >
+    <link href="../css/main.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Feedback Machine - alpha</title>
+    <title>Feedback Machine</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <h1><span class="text-muted">Feedback Machine</span>
+        <h1><span class="text-muted">Feedback Machine [B2]</span>
           <br/>
-          <small id="rubricName">Futbol</small>
+          <small id="rubricName">Mid-Mod Assessment</small>
         </h1>
       </div>
       <hr/>
       <div class="row">
         <div class="col-12">
           <h2>Student Information</h2>
-          <div class="row">
-            <div class="col-4">
-              <div class="col-auto">
-                <label for="studentName" class="col-form-label">Student Name(s)</label>
-              </div>
-              <div class="col-auto">
-                <input type="text" id="studentName" class="form-control" aria-describedby="studentName">
-              </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <label for="studentName" class="col-form-label">Student Name</label>
             </div>
-            <div class="col-4">
-              <div class="col-auto">
-                <label for="num_commits" class="col-form-label"># Commits </label>
-              </div>
-              <div class="col-auto">
-                <input type="text" id="num_commits" class="form-control" aria-describedby="num_commits">
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="col-auto">
-                <label for="num_pr" class="col-form-label"># Pull Requests </label>
-              </div>
-              <div class="col-auto">
-                <input type="text" id="num_pr" class="form-control" aria-describedby="num_pr">
-              </div>
+            <div class="col-auto">
+              <input type="text" id="studentName" class="form-control" aria-describedby="studentName">
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid">
+      <br>
       <div class="row">
         <div class="col-12">
           <table id="rowTable" class="table table-responsive table-striped table-hover">
@@ -58,38 +39,38 @@
               <tr>
                 <th></th>
                 <th>Exceptional</th>
-                <th>Meets Expectations</th>
+                <th>Passing</th>
                 <th>Below Expectations</th>
-                <th>Well Below Expectations</th>
-                <th>Score</th>
+                <th>Failing</th>
+                <th>Result</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Functionality</th>
+                <th scope="row">Completion</th>
                 <td id="1_4">
                   <label for="selector_1_4">
                     <input type="radio" id="selector_1_4" name="selector_1" data-value="1_4" />
-                    <p>Completes all 4 iterations</p>
+                    <p>All user stories and at least one extension complete.</p>
                   </label>
 
                 </td>
                 <td id="1_3">
                   <label for="selector_1_3">
                     <input type="radio" id="selector_1_3" name="selector_1" data-value="1_3" />
-                    <p>Completes all functionality in iterations 1 through 3; including the refactoring deliverable</p>
+                    <p>All user stories complete.</p>
                   </label>
                 </td>
                 <td id="1_2">
                   <label for="selector_1_2">
                     <input type="radio" id="selector_1_2" name="selector_1" data-value="1_2" />
-                    <p>Completes all functionality in iterations 1 and 2	</p>
+                    <p>All but one user story complete.</p>
                   </label>
                 </td>
                 <td id="1_1">
                   <label for="selector_1_1">
                     <input type="radio" id="selector_1_1" name="selector_1" data-value="1_1" />
-                    <p>Completes only iteration 1</p>
+                    <p>More than one user story incomplete.</p>
                   </label>
                 </td>
                 <td>
@@ -97,24 +78,28 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">Object Oriented Programming</th>
+                <th scope="row">MVC</th>
                 <td id="2_4">
                   <label for="selector_2_4">
                     <input type="radio" id="selector_2_4" name="selector_2" data-value="2_4" />
-                    <p>Students have implemented both inheritance and at least one module in a logical manner. Students can speak as to how/why inheritance and modules made sense for the given implementations, why they improve the organization of the code, and the distinction between the two.	</p>
+                    <p>
+                      Student strictly adheres to MVC principles.
+                    </p>
                   </label>
                 </td>
                 <td id="2_3">
                   <label for="selector_2_3">
                     <input type="radio" id="selector_2_3" name="selector_2" data-value="2_3" />
-                  <p>Students have implemented either inheritance or at least one module in a logical manner. Students can speak as to how/why inheritance or modules made sense for the given implementation, and why it improves the organization of their code. No class is over 150 lines long.		</p>
+                  <p>
+                    Student adheres to the principles of MVC. Student may have one MVC infraction.
+                  </p>
                   </label>
                 </td>
                 <td id="2_2">
                   <label for="selector_2_2">
                     <input type="radio" id="selector_2_2" name="selector_2" data-value="2_2" />
                     <p>
-                      Students can clearly identify the responsibility of each class that they created and the methods that they wrote. Students are able to describe why they have organized their code in the way they did. No class is over 200 lines long.
+                      Student does not adhere to the principles of MVC, demonstrated by 2 or 3 infractions
                     </p>
                   </label>
                 </td>
@@ -122,7 +107,7 @@
                   <label for="selector_2_1">
                     <input type="radio" id="selector_2_1" name="selector_2" data-value="2_1" />
                     <p>
-                      Students have difficulty explaining the reason they have organized their code in the way that they did. They may have few files that seem to be doing the vast majority of the work in the project, and have not drawn clear lines between the responsibilities of different classes they have created.
+                      More than 3 infractions of MVC principles.
                     </p>
                   </label>
                 </td>
@@ -131,33 +116,36 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">Ruby Conventions and Mechanics</th>
+                <th scope="row">ActiveRecord</th>
                 <td id="3_4">
                   <label for="selector_3_4">
                     <input type="radio" id="selector_3_4" name="selector_3" data-value="3_4" />
                     <p>
-                      Classes, methods, and variables are well named so that they clearly communicate their purpose. Code is all properly indented and syntax is consistent. No methods are longer than 10 lines long. Most enumerables/data structures chosen are the most efficient tool for a given job, and students can speak as to why those enumerables/data structures were chosen.
+                      Highly effective and efficient use of ActiveRecord beyond what was taught in class
                     </p>
                   </label>
                 </td>
                 <td id="3_3">
                   <label for="selector_3_3">
                     <input type="radio" id="selector_3_3" name="selector_3" data-value="3_3" />
-                    <p>Code is mostly properly indented, spaced, and lines are not excessively long. Class, method, variable, and file names follow convention. Some enumerables/data structures chosen are the most efficient tool for a given job, and students can speak as to why those enumerables/data structures were chosen. At least one hash is implemented in a way that makes logical sense.	</p>
+                    <p>
+                      Students use ActiveRecord Associations and built-in ActiveRecord methods wherever possible.
+                    </p>
                   </label>
                 </td>
                 <td  id="3_2">
                   <label for="selector_3_2">
                     <input type="radio" id="selector_3_2" name="selector_3" data-value="3_2" />
-                    <p>Code demonstrates some proper indenting and spacing. Class, method, variable, and file names inconsistently follow convention. Few enumerables/data structures chosen are the most efficient tool for a given job. Students may not be able to speak as to why those enumerables/data structures were chosen. No hashes are implemented, or are implemented in an inappropriate use case.	</p>
+                    <p>
+                      Student uses ActiveRecord to CRUD resources. Student uses ActiveRecord associations, but may have one instance where they fail to do so when appropriate. Student uses built-in ActiveRecord methods to process data, but may have one instance where they use Ruby instead.
+                    </p>
                   </label>
                 </td>
                 <td id="3_1">
                   <label for="selector_3_1">
                     <input type="radio" id="selector_3_1" name="selector_3" data-value="3_1" />
                     <p>
-                      Code is not properly indented and spaced and lines are excessively long. Class, method, variable, and file names do not follow convention
-
+                      Student is unable to CRUD resources using ActiveRecord, or student may fail to use ActiveRecord over Ruby on several occasions, or student may fail to use ActiveRecord associations on several occasions.
                     </p>
                   </label>
                 </td>
@@ -166,26 +154,28 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">Testing</th>
+                <th scope="row">TDD</th>
                 <td id="4_4">
                   <label for="selector_4_4">
                     <input type="radio" id="selector_4_4" name="selector_4" data-value="4_4" />
-                    <p>Mocks and/or stubs are used appropriately to ensure one of the following: testing is more robust (i.e., testing methods that might not otherwise be tested due to factors like randomness or user input), testing is more efficient (i.e., not reading a full CSV file every time you call a method for a test), or that classes can be tested without relying on functionality from other classes. Students are able to speak as to how mocks and/or stubs are fulfilling the above conditions. Spec harness runs in 5 seconds or less.	</p>
+                    <p>
+                      Tests cover all functionality including extensions and at least one edge case.
+                    </p>
                   </label>
                 </td>
                 <td id="4_3">
                   <label for="selector_4_3">
                     <input type="radio" id="selector_4_3" name="selector_4" data-value="4_3" />
                     <p>
-                    Test coverage is above 95%. Students can indentify unit and integration testing.
+                      Tests fully cover the functionality in the user stories (Features at or over 98%, Models at 100%)
                     </p>
                   </label>
                 </td>
-                <td id="4_2">
+                <td  id="4_2">
                   <label for="selector_4_2">
                     <input type="radio" id="selector_4_2" name="selector_4" data-value="4_2" />
                     <p>
-                      Test coverage is above 90%. Students may not be able to identify unit or integration tests. Git history may demonstrate that students are writing implementation code and then writing tests.
+                      Tests partially cover the functionality in the user stories.
                     </p>
                   </label>
                 </td>
@@ -193,17 +183,17 @@
                   <label for="selector_4_1">
                     <input type="radio" id="selector_4_1" name="selector_4" data-value="4_1" />
                     <p>
-                      Test coverage is below 90%.
+                      Tests do not cover the functionality in the user stories, or one or more stories is untested.
                     </p>
                   </label>
                 </td>
                 <td>
-                  <input id="4_result" type="number" min="0" max="4" step="0.5" class="form-control" />
+                  <input id="4_result" type="number" min="0" max="4" step="0.5"  class="form-control" />
                 </td>
               </tr>
             </tbody>
           </table>
-        </div>
+
       <!-- </div> -->
       <!-- <div class="row"> -->
         <div class="col-12">
@@ -216,19 +206,19 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row" data-value="1">Functionality</th>
+                <th scope="row" data-value="1">User Stories / Completion</th>
                 <td>
                   <textarea class="form-control" name="feedback_1" id="feedback_1"></textarea>
                 </td>
               </tr>
               <tr>
-                <th scope="row" data-value="2">Object Oriented Programming</th>
+                <th scope="row" data-value="2">MVC</th>
                 <td>
                   <textarea class="form-control" name="feedback_2" id="feedback_2"></textarea>
                 </td>
               </tr>
               <tr>
-                <th scope="row" data-value="3">Ruby Conventions and Mechanics</th>
+                <th scope="row" data-value="3">ActiveRecord</th>
                 <td>
                   <textarea class="form-control" name="feedback_3" id="feedback_3"></textarea>
                 </td>
@@ -240,14 +230,9 @@
                 </td>
               </tr>
           </table>
-
-
-        </div>
-      </div>
-      <div class="container">
           <div class="row">
-            <div class="col-12">
-
+            
+            <div class="col-6">
               <h2>Results</h2>
               <strong>Average:</strong> <span id="result_average"></span>
               <br/>
@@ -264,7 +249,7 @@
           <textarea class="form-control" id="fb_finished"></textarea>
       </div>
     </div>
-    <script src="./js/js.js"></script>
+    <script src="../js/js.js"></script>
 
   </body>
 </html>

@@ -87,7 +87,7 @@ function generateFeedback() {
   var categories = getCategories();
   var genFeed = "";
   var message = "Hi " + $("#studentName").val().trim() + ", your score on the ";
-  var message2 = $("#assessName").text() + " is " + calculateAverage() + ". ";
+  var message2 = $("#rubricName").text() + " is " + calculateAverage() + ". ";
   var message3 = "Here is some feedback:\n\n";
 
   // var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n\n";

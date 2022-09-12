@@ -80,7 +80,7 @@ function getCategories() {
 function generateFeedback() {
   var categories = getCategories();
   var genFeed = "";
-  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#assessName").text() + " is ";
+  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#rubricName").text() + " is ";
 
   // var message2 = (didPass()) ? "a pass :tada: Congratulations!\n" : "not a pass. Here is some feedback for you...\n\n";
   // genFeed += message + message2;

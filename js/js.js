@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   var studentNameBox = $("input#studentName")
   studentNameBox.on("input", function(e) {
-    document.title = $(this).val() + " | Feedback Machine"
+    document.title = $(this).val() + " | " + $("#rubricName").text() + " | Feedback Machine"
   })
 
   var connect_four_data = {}
@@ -86,7 +86,7 @@ function getCategories() {
 function generateFeedback() {
   var categories = getCategories();
   var genFeed = "";
-  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#projectName").text() + " project is ";
+  var message = "Hi " + $("#studentName").val().trim() + ", your " + $("#rubricName").text() + " project is ";
 
   var message2 = (didPass()) ? "a pass :tada: Congratulations!\n\n" : "not a pass. Here is some feedback for you...\n";
   var averageMessage = "Average: " + calculateAverage() + " / 4.0" + "\n\n";
